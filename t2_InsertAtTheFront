@@ -1,0 +1,44 @@
+
+
+class Node:
+    
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    
+    def __init__(self):
+        self.head = None
+    
+    def printl(self):
+        temp = self.head
+        while ( temp is not None):
+            print(temp.data,end = " ")
+            temp= temp.next
+   
+   
+   
+   """
+   ################################## HERE IS THE IDEA FOR INSERT IN THE FRONT ################################################
+   """
+   #insert at the front
+    def insert(self,Nod):
+        if self.head is None:
+            self.head = Nod
+        else:
+            Nod.next = self.head
+            self.head = Nod
+
+            
+l1 = LinkedList()
+n1 = Node(1)
+n2 = Node(2)
+n3 = Node(3)
+
+l1.insert(n1)
+l1.insert(n2)
+l1.insert(n3)
+l1.insert(Node(4))
+l1.printl()
+
