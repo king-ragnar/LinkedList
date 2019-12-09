@@ -1,3 +1,6 @@
+'''
+Write a function to delete a Linked List
+'''
 class Node:
     
     def __init__(self,data):
@@ -42,9 +45,6 @@ n1= Node(10)
 n2 = Node(20)
 l = LinkedList()
 l.insertfront(n1)
-l.insertfront(n1)
-
-l.insertfront(n1)
-
+l.insertfront(n2)
 l.deletelist()
 l.printl()
