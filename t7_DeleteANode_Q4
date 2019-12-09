@@ -38,7 +38,7 @@ class LinkedList:
                     prev = prev.next
                     nex = nex.next
                 prev.next = nex.next
-                    
+                nex = None
             
             
             
