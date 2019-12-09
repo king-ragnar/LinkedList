@@ -24,12 +24,6 @@ class LinkedList:
         else:
             Node.next = self.head
             self.head = Node
-    
-    def deletefront(self):
-        if self.head is None:
-            print("no element")
-        else:
-            self.head = self.head.next
           
     def delete(self,key):
         if self.head is None :
