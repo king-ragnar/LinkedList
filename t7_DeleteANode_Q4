@@ -1,0 +1,62 @@
+'''
+Linked List | Set 3 (Deleting a node)
+'''
+class Node:
+    
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    
+    def __init__(self):
+        self.head = None
+    
+    def printl(self):
+        temp= self.head
+        while temp != None:
+            print(temp.data,end =" ")
+            temp = temp.next
+    
+    def insertfront(self,Node):
+        if self.head is None:
+            self.head = Node
+        else:
+            Node.next = self.head
+            self.head = Node
+    
+    def deletefront(self):
+        if self.head is None:
+            print("no element")
+        else:
+            self.head = self.head.next
+          
+    def delete(self,key):
+        if self.head is None :
+            print("key not found")
+        else:
+            if self.head.data == key:
+                    self.head = self.head.next
+            else:
+                prev = self.head
+                nex = self.head.next
+                while nex.data != key :
+                    prev = prev.next
+                    nex = nex.next
+                prev.next = nex.next
+                    
+            
+            
+            
+
+        
+n1= Node(10)
+n2 = Node(20)
+l = LinkedList()
+l.insertfront(n1)
+l.insertfront(n2)
+l.insertfront(Node(30))
+l.printl()
+l.delete(30)
+print("\n")
+l.printl()
