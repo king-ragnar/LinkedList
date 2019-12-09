@@ -1,0 +1,51 @@
+class Node:
+    
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    
+    def __init__(self):
+        self.head = None
+    
+    def insertfront(self,Node):
+        if self.head is None:
+            self.head = Node
+        else:
+            Node.next = self.head
+            self.head = Node
+    
+    def middle(self):
+        count = 0 
+        temp = self.head
+        while temp != None:
+            count+=1
+            temp = temp.next
+        if count%2 == 0 :
+            mid =( count //2 )+1
+        else:
+            mid =( count // 2)
+        count = 0
+        temp = self.head
+        print(mid,count)
+        while count != mid:
+            count+=1
+            print(temp.data)
+            temp = temp.next
+        print(temp.data)
+            
+        
+n1= Node(1)
+n2 = Node(2)
+n3 = Node(3)
+n4 = Node(4)
+n5 = Node(5)
+l = LinkedList()
+l.insertfront(n1)
+l.insertfront(n2)
+l.insertfront(n3)
+l.insertfront(n4)
+l.insertfront(n5)
+l.insertfront(Node(6))
+l.middle()
