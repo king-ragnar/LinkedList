@@ -1,0 +1,42 @@
+class Node:
+    
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    
+    def __init__(self):
+        self.head = None
+    
+    def insertfront(self,Node):
+        if self.head is None:
+            self.head = Node
+        else:
+            Node.next = self.head
+            self.head = Node
+    
+    
+    def find(self):
+        s = set()
+        temp = self.head
+        
+        while(temp):
+            if temp.data not in s:
+                s.add(temp.data)
+            else:
+                print(s)
+                print("Cycle found")
+                return
+            temp = temp.next
+        print("No Cycle Found")
+        
+        
+        
+n1 = Node(1)
+n2 = Node(2)
+l  = LinkedList()
+l.insertfront(n1)
+l.insertfront(n2)
+#l.head.next.next =  l.head #checking for Cycle
+l.find()
