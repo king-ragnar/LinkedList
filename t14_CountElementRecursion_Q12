@@ -1,0 +1,44 @@
+class Node:
+    
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    
+    def __init__(self):
+        self.head = None
+    
+    def insertfront(self,Node):
+        if self.head is None:
+            self.head = Node
+        else:
+            Node.next = self.head
+            self.head = Node
+    
+    def count(self,Node,element):
+        if Node is None:
+            return 0
+        else:
+            if Node.data == element:
+                return 1+self.count(Node.next,element)
+            else:
+                return self.count(Node.next,element)
+    
+    def countr(self,element):
+        ans = self.count(self.head,element)
+        print(ans)
+
+        
+        
+n1= Node(10)
+n2 = Node(20)
+l = LinkedList()
+l.insertfront(n1)
+l.insertfront(n2)
+l.insertfront(Node(30))
+l.insertfront(Node(30))
+l.insertfront(Node(30))
+l.insertfront(Node(30))
+l.insertfront(Node(30))
+l.countr(10)
