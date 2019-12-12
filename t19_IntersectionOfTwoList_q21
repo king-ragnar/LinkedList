@@ -23,9 +23,7 @@ class LinkedList:
             tmp = tmp.next
         print() 
         
-
-class Intersect:
-    def Intersect(self,a,b):
+def Intersect(a,b):
         l = []
         tmp = a.head 
         tmp1 = b.head
@@ -43,9 +41,8 @@ class Intersect:
         for i in range(0,len(l)-1):
             if l[i] == l[i+1]:
                 s.append(l[i])
-        return s 
-            
-            
+        return s
+
         
 # Driver Code 
 if __name__ == '__main__': 
@@ -65,8 +62,7 @@ if __name__ == '__main__':
     llist.printList() 
     print ("Linked List before moving last to front ") 
     llist2.printList() 
-    i = Intersect()
-    s = i.Intersect(llist,llist2)
+    s = Intersect(llist,llist2)
     newlist = LinkedList()
     for i in s:
         newlist.push(i)
