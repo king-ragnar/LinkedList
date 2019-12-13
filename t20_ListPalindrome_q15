@@ -1,0 +1,35 @@
+class Node:
+    
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    
+    def __init__(self):
+        self.head = None
+    
+    def insertfront(self,Node):
+        if self.head is None:
+            self.head = Node
+        else:
+            Node.next = self.head
+            self.head = Node
+    
+    
+    def palindrome(self):
+        temp = self.head
+        s= ""
+        while temp:
+            s=s+str(temp.data)
+        return s
+        
+        
+n1 = Node(1)
+n2 = Node(2)
+l  = LinkedList()
+l.insertfront(n1)
+l.insertfront(n2)
+l.insertfront(Node(2))
+l.insertfront(Node(1))
+print(l.palindrome())
