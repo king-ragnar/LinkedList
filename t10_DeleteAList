@@ -1,5 +1,6 @@
 '''
 Write a function to delete a Linked List
+delete a list
 '''
 class Node:
     
